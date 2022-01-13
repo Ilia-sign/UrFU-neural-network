@@ -1,2 +1,3 @@
 # UrFU-neural-network
-Creating a neural network that determines the tone of the text.
+The model corrects the grammatical errors of the sentence. 
+Before using, please install - "happytransformer". Write pip install happytransformer.
