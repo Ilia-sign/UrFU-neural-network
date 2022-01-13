@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from transformers import pipeline
+from happytransformer import HappyTextToText, TTSettings
 from pydantic import BaseModel
 
 class Item(BaseModel):
