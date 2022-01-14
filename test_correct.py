@@ -1,3 +1,4 @@
+!pip install pytest
 from happytransformer import HappyTextToText, TTSettings
 
 happy_tt = HappyTextToText("T5", "vennify/t5-base-grammar-correction")
