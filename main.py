@@ -8,7 +8,8 @@ class Item(BaseModel):
 
 
 app = FastAPI()
-classifier = pipeline("sentiment-analysis")
+classifier = pipeline("sentiment-analysis",
+                      "blanchefort/rubert-base-cased-sentiment")
 
 
 @app.get("/")
@@ -16,8 +17,6 @@ def root():
     return {"message": "Hello UrFU"}
 
 
-classifier = pipeline("sentiment-analysis",
-                      "blanchefort/rubert-base-cased-sentiment")
 
 print(classifier("Привет! Как дела?"))
 print(classifier("Привет! Я убью тебя лодочнин!"))
