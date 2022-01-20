@@ -24,6 +24,6 @@ print(classifier("Привет! Я убью тебя лодочнин!"))
 print(classifier("Привет! Я люблю тебя!"))
 
 
-@app.post("/predict/")
+@app.post("/predict/") 
 def predict(item: Item):
     return classifier(item.text)[0]
