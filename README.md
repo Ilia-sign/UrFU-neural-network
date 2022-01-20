@@ -14,3 +14,4 @@ Rus:
 Перед использованием установить transformers, pipeline, pydantic, torch, fastapi, uvicorn. Прописать в терминале pip install transformers, pipeline, pydantic, torch, fastapi, uvicorn.
 Перед использованием прописать в терминале или консоле - uvicorn main: app. 
 
+ 
