@@ -20,8 +20,8 @@ classifier = pipeline("sentiment-analysis",
                       "blanchefort/rubert-base-cased-sentiment")
 
 print(classifier("Привет! Как дела?"))
-print(classifier("Привет! Я убью тебя лодочкин?"))
-print(classifier("Привет! Я люблю тебя?"))
+print(classifier("Привет! Я убью тебя лодочнин!"))
+print(classifier("Привет! Я люблю тебя!"))
 
 
 @app.post("/predict/")
