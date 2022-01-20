@@ -38,4 +38,4 @@ def test_read_predict_neutral():
     json_data = response.json()
 
     assert response.status_code == 200
-    assert json_data['label'] == 'NEUTRAL'
+    assert json_data['label'] == 'NEUTRAL' 
