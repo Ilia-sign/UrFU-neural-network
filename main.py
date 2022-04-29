@@ -27,4 +27,7 @@ print(sentiment_detection("Привет! Я люблю машинное обуч
 
 @app.post("/predict/") 
 def predict(item: Item):
-    return sentiment_detection(item.text)[0]
+    if item.text != "":
+        return sentiment_detection(item.text)[0]
+    else: 
+        return {"message": "Введите текст"}
