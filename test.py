@@ -46,5 +46,5 @@ def test_read_predict_none_text():
                           )
     json_data = response.json()
     assert response.status_code == 200
-    assert json_data['message'] == {"Введите текст"}
+    assert json_data['message'] == "Введите текст"
  
