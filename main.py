@@ -12,17 +12,12 @@ sentiment_detection = pipeline("sentiment-analysis",
 
 
 app = FastAPI()
-sentiment_detection = pipeline("sentiment-analysis")
+#sentiment_detection = pipeline("sentiment-analysis")
 
 
 @app.get("/")
 def root():
     return {"message": "Hello UrFU"}
-
-
-print(sentiment_detection("Привет! Как дела?"))
-print(sentiment_detection("Привет! Я не люблю машинное обучение!"))
-print(sentiment_detection("Привет! Я люблю машинное обучение!"))
 
 
 @app.post("/predict/") 
