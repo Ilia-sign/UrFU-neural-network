@@ -6,9 +6,13 @@ from pydantic import BaseModel
 class Item(BaseModel):
     text: str
 
+        
+sentiment_detection = pipeline("sentiment-analysis", 
+                               "blanchefort/rubert-base-cased-sentiment")
+
 
 app = FastAPI()
-classifier = pipeline("sentiment-analysis")
+sentiment_detection = pipeline("sentiment-analysis")
 
 
 @app.get("/")
@@ -16,14 +20,11 @@ def root():
     return {"message": "Hello UrFU"}
 
 
-classifier = pipeline("sentiment-analysis",
-                      "blanchefort/rubert-base-cased-sentiment")
-
-print(classifier("Привет! Как дела?"))
-print(classifier("Привет! Я убью тебя лодочнин!"))
-print(classifier("Привет! Я люблю тебя!"))
+print(sentiment_detection("Привет! Как дела?"))
+print(sentiment_detection("Привет! Я не люблю машинное обучение!"))
+print(sentiment_detection("Привет! Я люблю машинное обучение!"))
 
 
 @app.post("/predict/") 
 def predict(item: Item):
-    return classifier(item.text)[0]
+    return sentiment_detection(item.text)[0]
