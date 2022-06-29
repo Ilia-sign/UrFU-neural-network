@@ -17,8 +17,14 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "Hello UrFU"}
 
+    return {"message": "Hello People"}
+
+@app.post("/correct/")
+def correct(item: Item):
+      return happy_tt.generate_text(f'{item.text}.', args=args).text
+
+    
 
 @app.post("/predict/") 
 def predict(item: Item):
